@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+
 function generateRandomId(length) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
@@ -13,9 +14,21 @@ function generateRandomId(length) {
   
   return result;
 }
+
 function App() {
+  
+  
   const [form,setform]=useState({})
-  const[task,settask]=useState([])
+  const[task,settask]=useState(() => {
+    const savedTasks = sessionStorage.getItem('task');
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  })
+  useEffect(() => {
+    sessionStorage.setItem('task',JSON.stringify(task))
+  
+    
+  }, [task])
+  
   function HandleChange(e){
     const{name,value}=e.target
     setform({...form,[name]:value})
@@ -26,7 +39,9 @@ function App() {
         const newtask=[...prev,{...form,id:generateRandomId(6)}]
         return newtask
       }
+      
     )
+    
     console.log(task)
   }
   function HandleDelete(id){
@@ -34,6 +49,7 @@ function App() {
       const updatedarray=prev.filter((task)=>task.id!==id)
       return updatedarray
     })
+    
   }
   function HandleUpdate(id){
    const UpdatedTask=prompt('Enter The Task')
@@ -45,6 +61,7 @@ function App() {
       const updatedarray=prev.map((task)=>task.id===id?{...task,Task:UpdatedTask}:task)
       return updatedarray
     })
+    
   }
   return (
     <>

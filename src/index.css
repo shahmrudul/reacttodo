@@ -9,6 +9,226 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: auto; /* Add this line to prevent horizontal scroll on small screens */
+}
+
+.todoapp {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.todoapp input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.todoapp button {
+  padding: 15px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  width: 100%; /* Make button take full width */
+}
+
+.todoapp button:hover {
+  background-color: #0056b3;
+}
+
+.tasks {
+  background: #f9f9f9;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.tasks p {
+  margin: 0;
+  font-size: 18px;
+  flex: 1;
+  text-align: left;
+  word-wrap: break-word; /* Ensure long words wrap */
+}
+
+.tasks button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tasks button:hover {
+  background-color: #c82333;
+}
+
+.tasks button:first-of-type {
+  background-color: #28a745;
+}
+
+.tasks button:first-of-type:hover {
+  background-color: #218838;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .todoapp {
+    padding: 20px;
+  }
+
+  .todoapp input[type="text"] {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .todoapp button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .tasks {
+    padding: 12px;
+  }
+
+  .tasks p {
+    font-size: 16px;
+  }
+
+  .tasks button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .todoapp {
+    padding: 15px;
+    max-width: 350px;
+  }
+
+  .todoapp input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .todoapp button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .tasks {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tasks p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .tasks button {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .todoapp {
+    padding: 10px;
+    max-width: 280px;
+  }
+
+  .todoapp input[type="text"] {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .todoapp button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .tasks {
+    padding: 8px;
+  }
+
+  .tasks p {
+    font-size: 12px;
+  }
+
+  .tasks button {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* App.css 
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .todoapp {
@@ -120,3 +340,4 @@ body {
     font-size: 13px;
   }
 }
+*/
